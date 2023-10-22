@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froggy Name Generator</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="custom.css"> <!--created custom css with a few changes-->
+</head>
+<body class="container-md" style="background-color: #EBEBEB; border-color: #d9d9d9;">
+    <div class="card border mt-3 shadow-lg rounded" style="background-color: #EBEBEB;">
+      <!--margin on top set to 3, large shadow around element, rounded corners-->
+      <!--tiny bits of inline styling for background color will probably move at some point-->
+        <div class="card-body"> <!--wanted to condense form into card for aesthetic-->
+            <form> <!--use several form classes from bootstrap for consistency-->
+                <div class="form-row">
+                  <div class="form-group col-md-5"> 
+                    <!--md is medium breakpoint for browsers, 5 is size in relation to 12-->
+                    <label for="input-first">First Name</label>
+                    <input type="text" class="form-control" id="input-first" placeholder="Martha">
+                  </div> <!--form control is a very useful bootstrap class for this-->
+                  <div class="form-group col-md-2"> 
+                    <label for="input-middle">Middle Initial</label>
+                    <input type="text" class="form-control" id="input-middle" placeholder="P">
+                  </div> 
+                  <div class="form-group col-md-5">
+                    <label for="input-last">Last Name</label>
+                    <input type="text" class="form-control" id="input-last" placeholder="Johnson">
+                  </div>
+                </div>
+                <!--i don't actually have a use for favorite animal and music but maybe someday...-->
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="input-animal">Favorite Animal</label>
+                      <input type="text" class="form-control" id="input-animal" placeholder="Ex. 'Axolotl'">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="input-music">Favorite Type of Music</label>
+                      <input type="text" class="form-control" id="input-music" placeholder="Ex. 'Jazz'">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6"> 
+                      <label for="input-birth">Date of Birth</label>
+                      <input type="date" class="form-control" id="input-birth"> 
+                    </div>
+                    <div class="col-auto"> <!--want columns to take up variable size in relation to date input-->
+                        <label for="select-blood">Blood Type</label>
+                        <select class="custom-select" id="select-blood">
+                            <option value="0">A</option> <!--A is automatically selected for when people aren't sure-->
+                            <option value="1">B</option>
+                            <option value="2">AB</option>
+                            <option value="3">O</option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                      <!--i don't actually plan on using rh but it felt weird to leave out-->
+                        <label for="plus-or-minus">Rh</label>
+                        <div class="form-check my-1" id="plus-or-minus">
+                            <input class="form-check-input" type="radio" name="rh-radios" id="plus" value="1" checked>
+                            <label class="form-check-label" for="plus">
+                              Positive (+)
+                            </label> 
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rh-radios" id="minus" value="0">
+                            <label class="form-check-label" for="minus">
+                              Negative (-)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group"> <!--using custom hover-shadow class, may still tweak shadows later-->
+                    <button class="btn btn-dark hover-shadow" type="button" id="button">Get Froggy Name</button>
+                    <!--this first button is what initializes most of the javascript and resets form-->
+                    <button class="btn btn-dark hover-shadow" type="button" id="reset-button">Reset</button>
+                    <!--this other button only resets form and clears table created from user input-->
+                </div>
+        </div>
+    </div>
+    <!--creating a table that's stylistically pretty simple and matches above portion on card-->
+    <!--i wanted it to appear as an extension of the card element so no added margin-->
+    <table class="table table-borderless shadow-lg" id='table' style="background-color: #EBEBEB;">
+      <!--i liked how borderless removed lines, and gave it shadow matching card element-->
+            <thead class="thead-dark">
+              <tr>
+                <!--adding table headers for rows that will be created by users-->
+                <th scope="col">#</th>
+                <th scope="col">Froggy Forename</th>
+                <th scope="col">Froggy Last Name</th>
+                <th scope="col">Froggy Profession</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+              <!--this is where rows will be added-->
+            </tbody>
+    </table>
+    <!--adding all the scripts i either use or will be potentially using-->
+    <script src="home.js"></script> 
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

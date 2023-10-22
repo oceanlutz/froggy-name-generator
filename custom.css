@@ -1,0 +1,47 @@
+.hover-shadow {
+    box-shadow: 0 0 0.4rem grey;
+    transition: box-shadow 0.15s ease-in-out;
+} 
+/*
+    this is a custom class for mainly adding shadow to 
+    the button its being used for 
+*/
+
+.hover-shadow:hover {
+    box-shadow: 0 0.1rem 0.8rem grey;
+}
+/* 
+    this extends the class to add a bigger shadow 
+    on mouse hover
+*/
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0 0 0.2rem grey;
+}
+/*
+    this overwrites the bootstrap CSS and changes the visual
+    qualities of the bootstrap class .form-control in order
+    to make it more visually preferrable
+*/
+
+input[type='radio'] {
+    accent-color: #232323;
+}
+/*
+    overwrites the visual qualities of radios affected by 
+    bootstrap to change color of selected option
+*/
+
+.custom-select:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0 0 0.2rem grey;
+}
+/*
+    this makes the elements in the custom-select class 
+    match the form-control class when inputting info
+*/
